@@ -10,6 +10,12 @@ import Login from './pages/auth/login';
 import Signup from './pages/auth/signup';
 import Dashboard from './pages/dashboard/dashboard';
 import ProtectedRoute from './components/protectedRoutes';
+import Assistant from './pages/dashboard/assistant';
+import ConversationDetail from './pages/dashboard/conversationDetail';
+import ConversationList from './pages/dashboard/conversationList';
+import Leads from './pages/dashboard/leads';
+import WorkflowList from './pages/dashboard/workflowList';
+import UpdateWorkflow from './components/updateWorkflow';
 
 const DefaultRedirect = () => {
   const { user } = useContext(AuthContext);
@@ -50,6 +56,12 @@ function App() {
             {/* Dashboard Routes */}
             <Route element={<DashboardWrapper />}>
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/assistant" element={<Assistant />} />
+              <Route path="/conversation" element={<ConversationList />} />
+              <Route path="/conversation/:id" element={<ConversationDetail />} />
+              <Route path="/leads" element={<Leads/>} /> 
+              <Route path="/workflows" element={<WorkflowList />} />
+              <Route path="/workflows/:id" element={<UpdateWorkflow />} />
               {/* Future nested routes: leads, settings */}
             </Route>
 
