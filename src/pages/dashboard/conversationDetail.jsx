@@ -103,10 +103,10 @@ export default function ConversationDetail() {
         <Typography variant="h6" mb={1}>
           Lead Info
         </Typography>
-        <Typography>Name: {conversation.lead.name}</Typography>
-        <Typography>Email: {conversation.lead.email}</Typography>
-        <Typography>Phone: {conversation.lead.phone}</Typography>
-        <Typography>Status: {conversation.lead.status}</Typography>
+        <Typography>Name: {conversation?.lead?.name}</Typography>
+        <Typography>Email: {conversation?.lead?.email}</Typography>
+        <Typography>Phone: {conversation?.lead?.phone}</Typography>
+        <Typography>Status: {conversation?.lead?.status}</Typography>
       </Paper>
     </Box>
   );
