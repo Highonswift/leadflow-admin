@@ -18,7 +18,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import { Add, TrendingUp, Message } from '@mui/icons-material';
+import { Add, TrendingUp, Message , People} from '@mui/icons-material';
 
 const chartData = [
   { name: 'Mon', leads: 30 },
@@ -50,35 +50,40 @@ const Dashboard = () => {
       {/* KPI Cards */}
       <Grid container spacing={3}>
         {[
-          {
-            title: 'Total Leads',
-            value: '120',
-            color: 'linear-gradient(135deg, #4F46E5, #3B82F6)',
-            icon: <TrendingUp />,
-            change: '+12% this week',
-          },
-          {
-            title: 'All Conversations',
-            value: '32',
-            color: 'linear-gradient(135deg, #10B981, #059669)',
-            icon: <Message />,
-            change: '+5 today',
-          },
-          {
-            title: 'Avg Duration',
-            value: '45',
-            color: 'linear-gradient(135deg, #9333EA, #7E22CE)',
-            icon: <TrendingUp />,
-            change: '+8% this month',
-          },
-          {
-            title: 'Avg Cost',
-            value: '32',
-            color: 'linear-gradient(135deg, #F59E0B, #D97706)',
-            icon: <Message />,
-            change: '+5 today',
-          },
-        ].map((card, index) => (
+  {
+    title: 'Total Leads',
+    value: '120',
+    color: 'linear-gradient(135deg, #4F46E5, #3B82F6)',
+    icon: <TrendingUp />,
+    change: '+12% this week',
+    description: 'Number of new leads captured from all channels this week.',
+  },
+  {
+    title: 'Active Conversations',
+    value: '32',
+    color: 'linear-gradient(135deg, #10B981, #059669)',
+    icon: <Message />,
+    change: '+5 today',
+    description: 'Number of ongoing conversations with customers today.',
+  },
+  {
+    title: 'Average Call Duration',
+    value: '8m 45s',
+    color: 'linear-gradient(135deg, #9333EA, #7E22CE)',
+    icon: <TrendingUp />,
+    change: '-3% this month',
+    description: 'Average duration of customer calls or voice interactions.',
+  },
+  {
+    title: 'Average Lead Conversion Cost',
+    value: '$32',
+    color: 'linear-gradient(135deg, #F59E0B, #D97706)',
+    icon: <People />,
+    change: '-5% this month',
+    description: 'Average marketing or operational cost to convert a lead.',
+  },
+]
+.map((card, index) => (
           <Grid key={index} size={3}>
             <MotionPaper
               whileHover={{ scale: 1.05 }}

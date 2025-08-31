@@ -16,6 +16,7 @@ import ConversationList from './pages/dashboard/conversationList';
 import Leads from './pages/dashboard/leads';
 import WorkflowList from './pages/dashboard/workflowList';
 import UpdateWorkflow from './components/updateWorkflow';
+import AssistantDetail from './pages/dashboard/assistantDetail';
 
 const DefaultRedirect = () => {
   const { user } = useContext(AuthContext);
@@ -57,6 +58,7 @@ function App() {
             <Route element={<DashboardWrapper />}>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/assistant" element={<Assistant />} />
+              <Route path='/assistant/:id' element={<AssistantDetail/>}/>
               <Route path="/conversation" element={<ConversationList />} />
               <Route path="/conversation/:id" element={<ConversationDetail />} />
               <Route path="/leads" element={<Leads/>} /> 

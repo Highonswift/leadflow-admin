@@ -23,3 +23,8 @@ export const deleteAssistant = async (id) => {
   const response = await api.delete(`/assistants/${id}`);
   return response.data;
 };
+
+export const fetchAssistantById = async (id) => {
+  const response = await api.get(`/assistants/${id}`);
+  return response.data;
+}

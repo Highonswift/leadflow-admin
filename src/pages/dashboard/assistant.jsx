@@ -12,12 +12,13 @@ import {
 } from "@mui/material";
 import AddAssistantDialog from "../../components/dialog/addAssistant";
 import { fetchAssistants, createAssistant } from "../../api/assistantApi";
+import { useNavigate } from "react-router-dom";
 
 export default function Assistant() {
   const [assistants, setAssistants] = useState([]);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
+    const navigate = useNavigate(); 
+      useEffect(() => {
     loadAssistants();
   }, []);
 
@@ -72,7 +73,11 @@ export default function Assistant() {
           </TableHead>
           <TableBody>
             {assistants.map((a) => (
-              <TableRow key={a.id}>
+              <TableRow key={a.id}
+               hover
+                sx={{ cursor: 'pointer' }}
+                onClick={() => navigate(`/assistant/${a.id}`)}
+              >
                 <TableCell>{a.name}</TableCell>
                 <TableCell>{a.type}</TableCell>
                 <TableCell>{a.language}</TableCell>
